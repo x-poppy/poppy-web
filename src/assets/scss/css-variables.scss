@@ -1,0 +1,37 @@
+
+@import "var";
+
+:root {
+    // Color Palette
+    --wow-black: #{$black};
+    --wow-white: #{$white};
+    --wow-gray-1: #{$gray-1};
+    --wow-gray-2: #{$gray-2};
+    --wow-gray-3: #{$gray-3};
+    --wow-gray-4: #{$gray-4};
+    --wow-gray-5: #{$gray-5};
+    --wow-gray-6: #{$gray-6};
+    --wow-gray-7: #{$gray-7};
+    --wow-gray-8: #{$gray-8};
+    --wow-red: #{$red};
+    --wow-blue: #{$blue};
+    --wow-orange: #{$orange};
+    --wow-orange-dark: #{$orange-dark};
+    --wow-orange-light: #{$orange-light};
+    --wow-green: #{$green};
+
+    // Component Colors
+    --wow-primary-color: #{$color-primary};
+    --wow-success-color: #{$color-success};
+    --wow-danger-color: #{$color-danger};
+    --wow-warning-color: #{$color-warning};
+    --wow-info-color: #{$gray-6};
+    --wow-text-color: #{$color-text};
+    --wow-active-color: #{$color-active};
+    --wow-background-color: #{$color-background};
+    --wow-background-color-light: #{$color-background-light};
+    --wow-text-link-color: #{$color-text-link};
+
+    // Border
+    --wow-border-color: #{$border-color};
+}
