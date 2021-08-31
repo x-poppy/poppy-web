@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "build:ci": "CI=true react-app-rewired build",
+    "build": "CI=true react-app-rewired build",
     "test:dev": "react-scripts test",
     "test": "react-scripts test --passWithNoTests --coverage --outputFile=result.json src",
     "test:ci": "CI=true react-scripts test --passWithNoTests --silent --ci --coverage --testLocationInResults --json --outputFile=\"report.json\"",
