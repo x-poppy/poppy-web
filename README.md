@@ -8,7 +8,6 @@
 - [Documents](#documents)
 - [Contributing](#contributing)
 - [License](#license)
-
 ## Description
 
 `poppy-server` is a web admin sever.
