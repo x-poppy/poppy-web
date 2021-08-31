@@ -1,6 +1,6 @@
 {
   "name": "@x-poppy/poppy-web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "CI=true react-app-rewired build",
