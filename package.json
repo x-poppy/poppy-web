@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "CI=true react-app-rewired build",
     "test:dev": "react-scripts test",
     "test": "CI=true react-scripts test --passWithNoTests",
     "lint": "eslint src --ext .ts,.tsx",

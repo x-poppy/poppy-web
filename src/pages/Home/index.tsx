@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Button, Descriptions, Result, Avatar, Space, Statistic } from 'antd';
+import { Button, Descriptions, Result, Space, Statistic } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { useTranslation } from 'react-i18next';
