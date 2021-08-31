@@ -1,4 +1,4 @@
-# poppy-server
+# poppy-web
 
 :star2: Star us on GitHub — it helps! :clap:
 
@@ -10,7 +10,7 @@
 - [License](#license)
 ## Description
 
-`poppy-server` is a web admin sever.
+`poppy-web` is a web admin sever.
 
 > please visit the document link for more details .
 
@@ -22,7 +22,7 @@ https://github.com/x-poppy/x-poppy.github.io
 
 Feel free to dive in! [Open an issue](https://github.com/x-poppy/poppy-server/issues) or submit PRs.
 
-`poppy-server` follow below standards:
+`poppy-web` follow below standards:
 
 + [Contributor Covenant Code of Conduct](http://contributor-covenant.org/version/1/3/0/)
 + [The Standard of Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html)
