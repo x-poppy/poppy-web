@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "CI=true react-app-rewired build",
+    "build": "react-app-rewired build",
+    "build:ci": "CI=true react-app-rewired build",
     "test:dev": "react-scripts test",
-    "test": "CI=true react-scripts test --passWithNoTests",
+    "test": "react-scripts test --passWithNoTests --coverage --outputFile=result.json src",
+    "test:ci": "CI=true react-scripts test --passWithNoTests --silent --ci --coverage --testLocationInResults --json --outputFile=\"report.json\"",
     "lint": "eslint src --ext .ts,.tsx",
     "format": "prettier src --write",
     "eject": "react-scripts eject",
@@ -22,6 +24,16 @@
   "files": [
     "build"
   ],
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
