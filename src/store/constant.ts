@@ -1,4 +1,3 @@
-
 // 设置预览弹窗数据
 export const SET_PREVIEW_SOURCE = 'set_preview_source';
 

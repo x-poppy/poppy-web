@@ -1,60 +1,63 @@
+@import 'css-variables';
+@import 'var';
+@import 'reset';
+@import 'define';
+@import 'animation';
+@import 'transition';
 
-@import "css-variables";
-@import "var";
-@import "reset";
-@import "define";
-@import "animation";
-@import "transition";
-
-input:disabled, input[disabled]{
-    -webkit-opacity: 1;
-    opacity: 1;
-    -webkit-text-fill-color: #b9b9b9 !important;
-    color: #b9b9b9 !important;
+input:disabled,
+input[disabled] {
+  -webkit-opacity: 1;
+  opacity: 1;
+  -webkit-text-fill-color: #b9b9b9 !important;
+  color: #b9b9b9 !important;
 }
 textarea::-webkit-input-placeholder,
-input::-webkit-input-placeholder{
-    color: #4a6385;
+input::-webkit-input-placeholder {
+  color: #4a6385;
 }
 textarea::-moz-placeholder,
-input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-    color: #4a6385;
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #4a6385;
 }
 textarea:-moz-placeholder,
-input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-    color: #4a6385;
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #4a6385;
 }
 textarea:-ms-input-placeholder,
-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #4a6385;
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #4a6385;
 }
 
 html,
-body{
+body {
   min-height: 100vh;
 }
 
-.c-arrow{
-    width: j(10);
-    height: j(10);
-    border-top: 1px solid #cbcbcb;
-    border-right: 1px solid #cbcbcb;
-    &.right{
-        @include tfr(45deg);
-        margin-left: j(10);
-    }
-    &.bottom{
-        @include tfr(135deg);
-        margin-left: j(15);
-        margin-bottom: j(10);
-    }
-    &.left{
-        @include tfr(-135deg);
-        margin-left: j(15);
-        margin-bottom: j(10);
-    }
-    &.top{
-        @include tfr(-45deg);
-        margin-left: j(15);
-    }
+.c-arrow {
+  width: j(10);
+  height: j(10);
+  border-top: 1px solid #cbcbcb;
+  border-right: 1px solid #cbcbcb;
+  &.right {
+    @include tfr(45deg);
+    margin-left: j(10);
+  }
+  &.bottom {
+    @include tfr(135deg);
+    margin-left: j(15);
+    margin-bottom: j(10);
+  }
+  &.left {
+    @include tfr(-135deg);
+    margin-left: j(15);
+    margin-bottom: j(10);
+  }
+  &.top {
+    @include tfr(-45deg);
+    margin-left: j(15);
+  }
 }
