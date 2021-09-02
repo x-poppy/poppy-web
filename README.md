@@ -1,5 +1,7 @@
 # poppy-web
 
+[![CD](https://github.com/x-poppy/poppy-web/actions/workflows/CD.yml/badge.svg)](https://github.com/x-poppy/poppy-web/actions/workflows/CD.yml)
+
 :star2: Star us on GitHub — it helps! :clap:
 
 ## Table of Contents
