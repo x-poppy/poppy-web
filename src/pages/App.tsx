@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Login from 'src/pages/Login';
 import Layout from 'src/pages/Layout';
@@ -13,12 +13,14 @@ export default function App() {
     await i18n.changeLanguage(i18n.language === 'zh-CN' ? 'en-US' : 'zh-CN');
   };
   return (
-    <Fragment>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/" component={Layout} />
-        {/*<Redirect to="/" exact/>*/}
-      </Switch>
-    </Fragment>
+    <>
+      <HashRouter>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/" component={Layout} />
+          {/*<Redirect to="/" exact/>*/}
+        </Switch>
+      </HashRouter>
+    </>
   );
 }
