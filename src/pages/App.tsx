@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Login from 'src/pages/Login';
-import Layout from 'src/pages/Layout';
+import Layout from 'src/layouts/Layout';
 
 export default function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
