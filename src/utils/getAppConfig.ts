@@ -1,9 +1,11 @@
 interface AppConfig {
   apiPrefix: string;
+  appDomain: string;
   [key: string]: string | boolean | number | null;
 }
 
 const defaultAppConfig: AppConfig = {
+  appDomain: location.host,
   apiPrefix: 'http://localhost:7001/v1/api',
 };
 
@@ -15,6 +17,7 @@ function getAppConfigFromScriptElement(): AppConfig {
   if (configScript && configScript.innerHTML) {
     try {
       appConfig = JSON.parse(configScript.innerHTML);
+      // eslint-disable-next-line no-empty
     } catch (err) {}
   }
   return appConfig;
@@ -23,6 +26,7 @@ function getAppConfigFromScriptElement(): AppConfig {
 function getAppConfigFromURLParameters(): AppConfig {
   const searchParams = new URLSearchParams(window.location.search);
   const appConfig = {} as AppConfig;
+  // eslint-disable-next-line prefer-const
   for (let [key, val] of searchParams) {
     val = val.toLowerCase();
     if (val === 'true' || val === '') {

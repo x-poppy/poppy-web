@@ -1,10 +1,10 @@
 import pkg from '../../package.json';
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { configure } from 'axios-hooks';
 import { getAppConfig } from './getAppConfig';
 
 // this is low level init for application
-export async function initApp() {
+export async function initApp(): Promise<void> {
   console.info('====================');
   console.info(`${pkg.name}/${pkg.version}`);
   console.info('====================');
@@ -12,13 +12,21 @@ export async function initApp() {
   initAxios();
 }
 
+let axiosIns: AxiosInstance | null = null;
+
 function initAxios() {
+  if (axiosIns) return;
+
   const appConfig = getAppConfig();
-  const axiosIns = axios.create({
+  axiosIns = axios.create({
     baseURL: appConfig.apiPrefix,
   });
 
   configure({
     axios: axiosIns,
   });
+}
+
+export function getAxiosInstance(): AxiosInstance {
+  return axiosIns as AxiosInstance;
 }

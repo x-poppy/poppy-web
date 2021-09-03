@@ -1,14 +1,14 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import type { ProSettings } from '@ant-design/pro-layout';
 import ProLayout, { SettingDrawer } from '@ant-design/pro-layout';
-import Home from 'src/pages/Home';
+import { Home } from 'src/pages/Home/Home';
 import defaultProps from './_defaultProps';
 
-export default function Layout() {
+export function Layout(): JSX.Element {
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({ fixSiderbar: true });
   const [pathname, setPathname] = useState('/welcome');
   const history = useHistory();

@@ -1,7 +1,6 @@
 import React from 'react';
 import { SmileOutlined, CrownOutlined, TabletOutlined, AntDesignOutlined } from '@ant-design/icons';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   route: {
     path: '/',
