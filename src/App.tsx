@@ -6,7 +6,7 @@ import { Login } from 'src/pages/Login/Login';
 import { Layout } from 'src/layouts/Layout/Layout';
 import { useAppReadyInfo } from './hooks/appReadyInfo';
 
-export default function App (): JSX.Element | null  {
+export default function App(): JSX.Element | null {
   const appReadyInfo = useAppReadyInfo();
 
   if (!appReadyInfo) return null;
