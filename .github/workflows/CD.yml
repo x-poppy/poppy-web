@@ -38,6 +38,8 @@ jobs:
       env:
         TEST_COVERAGE_THRESHOLD: 0
         CI: true
+    - run: npm run storybook:build
+    - run: npm run storybook:deploy
     - run: npm run build --if-present
     - uses: JS-DevTools/npm-publish@v1
       with:
