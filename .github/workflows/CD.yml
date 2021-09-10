@@ -39,7 +39,7 @@ jobs:
         TEST_COVERAGE_THRESHOLD: 0
         CI: true
     - name: Deploy storybook
-    - run: |
+      run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/x-poppy/poppy-web.git
         npm run storybook:build
         npm run storybook:deploy -- -u "github-actions-bot <support+actions@github.com>"
