@@ -39,6 +39,7 @@ i18n.changeLanguage = (lng = i18n.language, callback?) => {
   const l = lng.split('-')[0];
   axios.defaults.headers.common['Accept-Language'] = l;
   window.document.querySelector('html')?.setAttribute('lang', l);
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   return _changeLanguage.call(i18n, lng, callback).finally(() => {});
 };
 

@@ -1,5 +1,5 @@
 import pkg from '../../package.json';
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { configure } from 'axios-hooks';
 import { getAppConfig } from './getAppConfig';
 
@@ -8,7 +8,7 @@ import 'nprogress/nprogress.css'; // progress bar style
 import { initI18n } from './initI18n';
 
 // this is low level init for application
-export async function initApp() {
+export async function initApp(): Promise<void> {
   console.info('====================');
   console.info(`${pkg.name}/${pkg.version}`);
   console.info('====================');
@@ -18,9 +18,13 @@ export async function initApp() {
   initI18n();
 }
 
+let axiosIns: AxiosInstance | null = null;
+
 function initAxios() {
+  if (axiosIns) return;
+
   const appConfig = getAppConfig();
-  const axiosIns = axios.create({
+  axiosIns = axios.create({
     baseURL: appConfig.apiPrefix,
   });
 
@@ -31,4 +35,8 @@ function initAxios() {
 
 function initNProgress() {
   NProgress.configure({ showSpinner: false });
+}
+
+export function getAxiosInstance(): AxiosInstance {
+  return axiosIns as AxiosInstance;
 }

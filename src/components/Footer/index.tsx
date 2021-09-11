@@ -1,8 +1,8 @@
-/* eslint-disable import/no-anonymous-default-export */
+import React from 'react';
 import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-layout';
 
-export default () => {
+export function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear();
   return (
     <DefaultFooter
@@ -29,4 +29,4 @@ export default () => {
       ]}
     />
   );
-};
+}

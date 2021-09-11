@@ -1,15 +1,14 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import { AlipayCircleOutlined, LockOutlined, TaobaoCircleOutlined, UserOutlined, WeiboCircleOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import Footer from 'src/components/Footer';
+import { Footer } from 'src/components/Footer';
 
 import Logo from 'src/assets/images/logo.svg';
 import styles from './index.module.scss';
 
-export default function Login() {
+export function Login(): JSX.Element {
   const [submitting, setSubmitting] = useState(false);
   const handleSubmit = async () => {
     setSubmitting(true);
