@@ -3,6 +3,10 @@ import axios from 'axios';
 import { configure } from 'axios-hooks';
 import { getAppConfig } from './getAppConfig';
 
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css'; // progress bar style
+import { initI18n } from './initI18n';
+
 // this is low level init for application
 export async function initApp() {
   console.info('====================');
@@ -10,6 +14,8 @@ export async function initApp() {
   console.info('====================');
 
   initAxios();
+  initNProgress();
+  initI18n();
 }
 
 function initAxios() {
@@ -21,4 +27,8 @@ function initAxios() {
   configure({
     axios: axiosIns,
   });
+}
+
+function initNProgress() {
+  NProgress.configure({ showSpinner: false });
 }

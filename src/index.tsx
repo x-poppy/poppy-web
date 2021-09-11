@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import App from 'src/pages/App';
 import reportWebVitals from 'src/reportWebVitals';
 
-import 'nprogress/nprogress.css'; // progress bar style
 import 'src/assets/scss/base.scss';
 
 import { initApp } from 'src/utils/initApp';
