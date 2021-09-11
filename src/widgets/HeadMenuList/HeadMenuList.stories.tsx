@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { HeadMenuList } from './HeadMenuList';
 
@@ -12,4 +14,4 @@ export default {
 } as ComponentMeta<typeof HeadMenuList>;
 
 export const Default = Template.bind({});
-Default.args = { background: '#ff0', label: 'Button' };
+// Default.args = { background: '#ff0', label: 'Button' };

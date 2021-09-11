@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from 'src/pages/App';
+import App from 'src/App';
 import reportWebVitals from 'src/reportWebVitals';
-
-import 'src/assets/scss/base.scss';
 
 import { initApp } from 'src/utils/initApp';
 

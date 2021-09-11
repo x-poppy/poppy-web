@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface HeadMenuListProps {}
 
 export const HeadMenuList: React.FC<HeadMenuListProps> = (props: HeadMenuListProps) => {

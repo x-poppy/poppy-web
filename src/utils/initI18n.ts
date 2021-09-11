@@ -23,9 +23,9 @@ export function initI18n() {
       },
     });
 
-  supportedLngs.forEach((lang) => {
-    ns.forEach((n) => {
-      i18n.addResources(lang, n, require(`../public/locales/${lang}/${n}.json`));
-    });
-  });
+  // supportedLngs.forEach((lang) => {
+  //   ns.forEach((n) => {
+  //     i18n.addResources(lang, n, require(`../public/locales/${lang}/${n}.json`));
+  //   });
+  // });
 }

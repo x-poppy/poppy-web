@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Button, Descriptions, Result, Space, Statistic } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
@@ -17,7 +16,7 @@ const content = (
   </Descriptions>
 );
 
-export default function Layout() {
+export function Home(): JSX.Element {
   const { t, i18n } = useTranslation();
   const handleSwitch = async () => {
     await i18n.changeLanguage(i18n.language === 'zh-CN' ? 'en-US' : 'zh-CN');
