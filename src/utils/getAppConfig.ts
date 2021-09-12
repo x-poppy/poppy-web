@@ -5,8 +5,8 @@ interface AppConfig {
 }
 
 const defaultAppConfig: AppConfig = {
-  appDomain: location.host,
-  apiPrefix: 'http://localhost:7001/v1/api',
+  appDomain: `${location.protocol}//${location.host}`,
+  apiPrefix: 'http://106.14.147.173:7001',
 };
 
 let appConfig: AppConfig | null = null;
