@@ -5,7 +5,6 @@ import { getAppConfig } from './getAppConfig';
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css'; // progress bar style
-import { initI18n } from './initI18n';
 
 // this is low level init for application
 export async function initApp(): Promise<void> {
@@ -15,7 +14,6 @@ export async function initApp(): Promise<void> {
 
   initAxios();
   initNProgress();
-  initI18n();
 }
 
 let axiosIns: AxiosInstance | null = null;

@@ -4,6 +4,7 @@ import { AppReadyInfo } from 'src/types/AppReadyInfo';
 import { AppReadyInfoState } from 'src/types/AppReadyInfoState';
 import { getAppConfig } from 'src/utils/getAppConfig';
 import { getAxiosInstance } from 'src/utils/initApp';
+import { initI18n } from './initI18n';
 
 let appReadyInfo: AppReadyInfo | null = null;
 
@@ -19,13 +20,15 @@ async function loadAppReadyInfo(): Promise<AppReadyInfo> {
   const appConfig = getAppConfig();
   const axiosIns = getAxiosInstance();
 
-  const { data: domainInfoData } = await axiosIns.get(`/api/v1/app-ui/domain-info/${encodeURIComponent(appConfig.appDomain)}}`);
+  const { data: domainInfoData } = await axiosIns.get(`/api/v1/app-ui/domain-info/${encodeURIComponent(appConfig.appDomain)}`);
   const appNo = domainInfoData.appNo;
 
   const uiInfosResponse = await Promise.all([axiosIns.get(`/api/v1/app-ui/app-info/${appNo}}`), axiosIns.get(`/api/v1/app-ui/theme-info/${appNo}}`)]);
 
   const appInfo = uiInfosResponse[0].data as AppInfo;
   const themeInfo = uiInfosResponse[1].data as Record<string, string>;
+
+  await initI18n(appInfo?.locale);
 
   appReadyInfo = {
     appInfo,

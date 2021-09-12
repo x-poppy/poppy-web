@@ -1,31 +1,36 @@
 import { initReactI18next } from 'react-i18next';
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n, { Resource } from 'i18next';
 
 const ns = ['common'];
-const supportedLngs = ['en', 'fr', 'ja'];
+const supportedLangs = ['en-US', 'zh-CN'];
+const defaultLang = 'en-US';
 
-export function initI18n() {
-  i18n
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-      lng: 'en',
-      fallbackLng: 'en',
-      interpolation: {
-        escapeValue: false,
-      },
-      defaultNS: 'common',
-      ns,
-      supportedLngs,
-      react: {
-        wait: true,
-      },
-    });
+export async function initI18n(locale: string): Promise<void> {
+  if (!supportedLangs.includes(locale)) {
+    locale = defaultLang;
+  }
 
-  // supportedLngs.forEach((lang) => {
-  //   ns.forEach((n) => {
-  //     i18n.addResources(lang, n, require(`../public/locales/${lang}/${n}.json`));
-  //   });
-  // });
+  const langModule: Record<string, unknown> = await import(/* webpackChunkName: "lang-[request]" */ `src/locales/${locale}.ts`);
+
+  const langResource = {
+    [locale]: {
+      translation: langModule.default,
+    },
+  } as Resource;
+
+  await i18n.use(initReactI18next).init({
+    lng: locale,
+    fallbackLng: locale,
+    interpolation: {
+      escapeValue: false,
+    },
+    resources: langResource,
+    defaultNS: 'common',
+    ns,
+    supportedLngs: supportedLangs,
+    react: {
+      wait: true,
+      useSuspense: false,
+    },
+  });
 }
