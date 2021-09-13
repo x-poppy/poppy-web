@@ -1,0 +1,43 @@
+{
+  "node": {
+    "appLevel": 0,
+    "parent": null,
+    "linkUrl": null,
+    "icon": null,
+    "hasPermission": true,
+    "i18nLabelKey": null,
+    "desc": null,
+    "status": "normal",
+    "resourceCode": "Setting",
+    "appNo": "6841372038532169728",
+    "type": "menu",
+    "position": "home",
+    "priority": 0,
+    "label": "Setting",
+    "createAt": "2021-09-08T14:10:00.600Z",
+    "updateAt": "2021-09-08T14:10:00.600Z"
+  },
+  "children": [
+    {
+      "node": {
+        "appLevel": 0,
+        "parent": "Setting",
+        "linkUrl": null,
+        "icon": null,
+        "hasPermission": true,
+        "i18nLabelKey": null,
+        "desc": null,
+        "status": "normal",
+        "resourceCode": "Setting-1",
+        "appNo": "6841372038532169728",
+        "type": "menu",
+        "position": "home",
+        "priority": 0,
+        "label": "Setting-1",
+        "createAt": "2021-09-08T14:10:00.610Z",
+        "updateAt": "2021-09-08T14:10:00.610Z"
+      },
+      "children": null
+    }
+  ]
+}
