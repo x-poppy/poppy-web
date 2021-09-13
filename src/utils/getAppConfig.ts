@@ -1,12 +1,15 @@
 interface AppConfig {
   apiPrefix: string;
   appDomain: string;
+  mock: boolean;
   [key: string]: string | boolean | number | null;
 }
 
 const defaultAppConfig: AppConfig = {
   appDomain: `${location.protocol}//${location.host}`,
-  apiPrefix: 'http://106.14.147.173:7001',
+  // apiPrefix: 'http://106.14.147.173:7001',
+  apiPrefix: 'http://localhost:7001',
+  mock: false,
 };
 
 let appConfig: AppConfig | null = null;

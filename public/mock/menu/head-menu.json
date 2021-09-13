@@ -1,0 +1,42 @@
+[
+  {
+    "node": {
+      "appLevel": 0,
+      "parent": null,
+      "linkUrl": null,
+      "icon": null,
+      "hasPermission": false,
+      "i18nLabelKey": null,
+      "desc": null,
+      "status": "normal",
+      "resourceCode": "Head",
+      "appNo": "6841372038532169728",
+      "type": "menu",
+      "position": "head",
+      "priority": 0,
+      "label": "Head",
+      "createAt": "2021-09-08T14:10:00.619Z",
+      "updateAt": "2021-09-08T14:10:00.619Z"
+    }
+  },
+  {
+    "node": {
+      "appLevel": 0,
+      "parent": "Head",
+      "linkUrl": null,
+      "icon": null,
+      "hasPermission": false,
+      "i18nLabelKey": null,
+      "desc": null,
+      "status": "normal",
+      "resourceCode": "Head-1",
+      "appNo": "6841372038532169728",
+      "type": "menu",
+      "position": "head",
+      "priority": 0,
+      "label": "Head-1",
+      "createAt": "2021-09-08T14:10:00.628Z",
+      "updateAt": "2021-09-08T14:10:00.628Z"
+    }
+  }
+]

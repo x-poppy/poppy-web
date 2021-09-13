@@ -3,7 +3,7 @@ import { AppInfo } from 'src/types/AppInfo';
 import { AppReadyInfo } from 'src/types/AppReadyInfo';
 import { AppReadyInfoState } from 'src/types/AppReadyInfoState';
 import { getAppConfig } from 'src/utils/getAppConfig';
-import { getAxiosInstance } from 'src/utils/initApp';
+import { getAxiosInstance } from 'src/utils/initAxios';
 import { initI18n } from './initI18n';
 
 let appReadyInfo: AppReadyInfo | null = null;
@@ -20,10 +20,25 @@ async function loadAppReadyInfo(): Promise<AppReadyInfo> {
   const appConfig = getAppConfig();
   const axiosIns = getAxiosInstance();
 
-  const { data: domainInfoData } = await axiosIns.get(`/api/v1/app-ui/domain-info/${encodeURIComponent(appConfig.appDomain)}`);
+  const { data: domainInfoData } = await axiosIns.get(`/api/v1/app-ui/domain-info/${encodeURIComponent(appConfig.appDomain)}`, {
+    headers: {
+      'x-mock-url': './mock/app-ui/domain-info.json',
+    },
+  });
   const appNo = domainInfoData.appNo;
 
-  const uiInfosResponse = await Promise.all([axiosIns.get(`/api/v1/app-ui/app-info/${appNo}}`), axiosIns.get(`/api/v1/app-ui/theme-info/${appNo}}`)]);
+  const uiInfosResponse = await Promise.all([
+    axiosIns.get(`/api/v1/app-ui/app-info/${appNo}}`, {
+      headers: {
+        'x-mock-url': './mock/app-ui/app-info.json',
+      },
+    }),
+    axiosIns.get(`/api/v1/app-ui/theme-info/${appNo}}`, {
+      headers: {
+        'x-mock-url': './mock/app-ui/theme-info.json',
+      },
+    }),
+  ]);
 
   const appInfo = uiInfosResponse[0].data as AppInfo;
   const themeInfo = uiInfosResponse[1].data as Record<string, string>;

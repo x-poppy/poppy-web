@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { Login } from 'src/pages/Login/Login';
-import { Layout } from 'src/layouts/Layout/Layout';
-import { useAppReadyInfo } from './utils/appReadyInfo';
-import { AppEmptyState } from './components/AppEmptyState/AppEmptyState';
+import { Layout } from 'src/pages/Home/Home';
+import { useAppReadyInfo } from '../../utils/appReadyInfo';
+import { AppEmptyState } from '../../components/AppEmptyState/AppEmptyState';
 
 import './App.module.css';
-import { AppLoading } from './components/AppLoading/AppLoading';
+import { AppLoading } from '../../components/AppLoading/AppLoading';
 
 export default function App(): JSX.Element | null {
   const appReadyInfoState = useAppReadyInfo();
