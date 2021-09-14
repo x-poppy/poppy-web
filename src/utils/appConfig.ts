@@ -7,8 +7,7 @@ interface AppConfig {
 
 const defaultAppConfig: AppConfig = {
   appDomain: `${location.protocol}//${location.host}`,
-  // apiPrefix: 'http://106.14.147.173:7001',
-  apiPrefix: 'http://localhost:7001',
+  apiPrefix: process.env.NODE_ENV === 'development' ? 'http://localhost:7001' : 'http://106.14.147.173:7001',
   mock: false,
 };
 
@@ -39,7 +38,7 @@ function getAppConfigFromURLParameters(): AppConfig {
     } else if (Number.isInteger(Number(val))) {
       appConfig[key] = Number(val);
     } else {
-      appConfig[key] = val;
+      appConfig[key] = decodeURIComponent(val);
     }
   }
 

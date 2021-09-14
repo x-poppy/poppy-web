@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { configure } from 'axios-hooks';
-import { getAppConfig } from './getAppConfig';
+import { getAppConfig } from './appConfig';
 
 let axiosIns: AxiosInstance | null = null;
 

@@ -18,15 +18,15 @@ export const AppEmptyState: React.FC<AppEmptyStateProps> = (props: AppEmptyState
   let subTitle = '';
   let status: ResultStatusType = '403';
 
-  if (props.disabled) {
+  if (props.error) {
+    title = t('AppEmptyState_App_Error_Title');
+    subTitle = t('AppEmptyState_App_Error_Subtitle');
+  } else if (props.disabled) {
     title = t('AppEmptyState_App_Disabled_Title');
     subTitle = t('AppEmptyState_App_Disabled_Subtitle');
   } else if (props.expired) {
     title = t('AppEmptyState_App_Expired_Title');
     subTitle = t('AppEmptyState_App_Expired_Subtitle');
-  } else if (props.error) {
-    title = t('AppEmptyState_App_Error_Title');
-    subTitle = t('AppEmptyState_App_Error_Subtitle');
   } else {
     title = 'Success';
     status = 'success';

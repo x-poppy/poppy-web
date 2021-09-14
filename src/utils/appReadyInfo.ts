@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { AppInfo } from 'src/types/AppInfo';
 import { AppReadyInfo } from 'src/types/AppReadyInfo';
 import { AppReadyInfoState } from 'src/types/AppReadyInfoState';
-import { getAppConfig } from 'src/utils/getAppConfig';
+import { getAppConfig } from 'src/utils/appConfig';
 import { getAxiosInstance } from 'src/utils/initAxios';
+import { initApp } from './initApp';
 import { initI18n } from './initI18n';
 
 let appReadyInfo: AppReadyInfo | null = null;
@@ -64,6 +65,7 @@ export function useAppReadyInfo(): AppReadyInfoState {
     if (!appReadyInfoState.loading) return;
     (async () => {
       try {
+        await initApp();
         const appReadyInfo = await loadAppReadyInfo();
         setAppReadyInfoState({
           loading: false,

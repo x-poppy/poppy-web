@@ -1,4 +1,5 @@
-import { StoryBookApp } from '../src/widgets/StoryBookApp/StoryBookApp';
+import { App } from '../src/widgets/App/App';
+import 'antd/dist/antd.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,10 +11,8 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  (Story) => (
-    <StoryBookApp>
-      <Story />
-    </StoryBookApp>
-  ),
-];
+window.appConfig = {
+  mock: true,
+};
+
+export const decorators = [(Story) => <App isWrapper={true}>{Story()}</App>];
