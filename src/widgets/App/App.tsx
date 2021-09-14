@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { Login } from 'src/pages/Login/Login';
-import { Layout } from 'src/pages/Home/Home';
+import { Home } from 'src/pages/Home/Home';
 import { useAppReadyInfo } from '../../utils/appReadyInfo';
 import { AppEmptyState } from '../../components/AppEmptyState/AppEmptyState';
 
@@ -35,7 +35,7 @@ export const App: React.FC<AppProps> = (props: AppProps) => {
       <HashRouter>
         <Switch>
           <Route path="/login" component={Login} />
-          <Route path="/" component={Layout} />
+          <Route path="/" component={Home} />
           {/*<Redirect to="/" exact/>*/}
         </Switch>
       </HashRouter>

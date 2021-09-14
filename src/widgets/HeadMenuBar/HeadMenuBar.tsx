@@ -5,10 +5,7 @@ import useAxios from 'axios-hooks';
 
 const { SubMenu } = Menu;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface HeadMenuBarProps {}
-
-export const HeadMenuBar: React.FC<HeadMenuBarProps> = (props: HeadMenuBarProps) => {
+export const HeadMenuBar: React.FC = () => {
   const [{ data, loading, error }] = useAxios({
     url: '/api/v1/menu/head-menu',
     headers: {

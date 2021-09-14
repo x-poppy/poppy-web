@@ -1,7 +1,8 @@
 export interface AppInfo {
   locale: string;
   displayName: string;
-  icp: string;
+  icon: string | null;
+  icp: string | null;
   status: string;
   isExpired: boolean;
 }
