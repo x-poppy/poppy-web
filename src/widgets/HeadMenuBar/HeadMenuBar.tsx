@@ -1,12 +1,39 @@
-import React from 'react';
-import { Avatar, Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, UserOutlined } from '@ant-design/icons';
+import React, { useMemo } from 'react';
+import { Menu } from 'antd';
 import useAxios from 'axios-hooks';
+import { MenuInfo } from 'src/types/MenuInfo';
+import * as AllIcons from '@ant-design/icons';
 
-const { SubMenu } = Menu;
+function buildMenuTrees(menuInfos: MenuInfo[] | null, level: number): React.ReactElement[] | null {
+  if (!menuInfos || menuInfos.length === 0) return null;
+
+  return menuInfos.map((menuInfo) => {
+    const menuInfoNode = menuInfo.node;
+
+    let iconElement: null | React.ReactElement = null;
+    if (menuInfoNode.icon) {
+      const IconElement = (AllIcons as any)[menuInfoNode.icon];
+      iconElement = <IconElement style={{ fontSize: '22px' }} />;
+    }
+
+    if (menuInfo.children && menuInfo.children.length > 0) {
+      return (
+        <Menu.SubMenu key={menuInfoNode.resourceCode} icon={iconElement} title={level > 0 && menuInfoNode.label}>
+          {buildMenuTrees(menuInfo.children, level + 1)}
+        </Menu.SubMenu>
+      );
+    }
+
+    return (
+      <Menu.Item title={menuInfoNode.label} key={menuInfoNode.resourceCode} icon={iconElement}>
+        {menuInfoNode.label}
+      </Menu.Item>
+    );
+  });
+}
 
 export const HeadMenuBar: React.FC = () => {
-  const [{ data, loading, error }] = useAxios({
+  const [{ data = [] }] = useAxios<MenuInfo[]>({
     url: '/api/v1/menu/head-menu',
     headers: {
       'x-mock-url': './mock/menu/head-menu.json',
@@ -15,24 +42,7 @@ export const HeadMenuBar: React.FC = () => {
 
   return (
     <Menu mode="horizontal" selectable={false}>
-      <Menu.Item key="mail" icon={<Avatar size="large" icon={<UserOutlined />} />}>
-        Navigation One
-      </Menu.Item>
-
-      <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-        Navigation Two
-      </Menu.Item>
-
-      <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
-        <Menu.ItemGroup key="g1" title="Item 1">
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-        </Menu.ItemGroup>
-        <Menu.ItemGroup key="g2" title="Item 2">
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-        </Menu.ItemGroup>
-      </SubMenu>
+      {buildMenuTrees(data as MenuInfo[], 0)}
     </Menu>
   );
 };

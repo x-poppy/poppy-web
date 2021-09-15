@@ -4,39 +4,63 @@
       "appLevel": 0,
       "parent": null,
       "linkUrl": null,
-      "icon": null,
+      "icon": "TaobaoCircleFilled",
       "hasPermission": false,
       "i18nLabelKey": null,
       "desc": null,
       "status": "normal",
-      "resourceCode": "Head",
+      "resourceCode": "HeadA",
       "appNo": "6841372038532169728",
       "type": "menu",
       "position": "head",
       "priority": 0,
-      "label": "Head",
+      "label": "HeadA",
       "createAt": "2021-09-08T14:10:00.619Z",
-      "updateAt": "2021-09-08T14:10:00.619Z"
-    }
+      "updateAt": "2021-09-15T15:44:00.834Z"
+    },
+    "children": [
+      {
+        "node": {
+          "appLevel": 0,
+          "parent": "HeadA",
+          "linkUrl": null,
+          "icon": null,
+          "hasPermission": false,
+          "i18nLabelKey": null,
+          "desc": null,
+          "status": "normal",
+          "resourceCode": "HeadA-1",
+          "appNo": "6841372038532169728",
+          "type": "menu",
+          "position": "head",
+          "priority": 0,
+          "label": "HeadA-1",
+          "createAt": "2021-09-08T14:10:00.628Z",
+          "updateAt": "2021-09-15T15:44:00.866Z"
+        },
+        "children": null
+      }
+    ]
   },
   {
     "node": {
       "appLevel": 0,
-      "parent": "Head",
+      "parent": null,
       "linkUrl": null,
       "icon": null,
       "hasPermission": false,
       "i18nLabelKey": null,
-      "desc": null,
+      "desc": "",
       "status": "normal",
-      "resourceCode": "Head-1",
+      "resourceCode": "HeadB",
       "appNo": "6841372038532169728",
       "type": "menu",
       "position": "head",
       "priority": 0,
-      "label": "Head-1",
-      "createAt": "2021-09-08T14:10:00.628Z",
-      "updateAt": "2021-09-08T14:10:00.628Z"
-    }
+      "label": "HeadB",
+      "createAt": "2021-09-09T03:10:00.619Z",
+      "updateAt": "2021-09-15T15:44:00.914Z"
+    },
+    "children": null
   }
 ]

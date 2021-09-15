@@ -7,6 +7,7 @@ import { HeadMenuBar } from 'src/widgets/HeadMenuBar/HeadMenuBar';
 import { useAppReadyInfo } from 'src/utils/appReadyInfo';
 
 import styles from './Home.module.css';
+import { HomeMenuList } from 'src/widgets/HomeMenuList/HomeMenuList';
 
 export function Home(): JSX.Element {
   const [pathname, setPathname] = useState('/welcome');
@@ -17,25 +18,21 @@ export function Home(): JSX.Element {
   return (
     <div className={styles.host}>
       <ProLayout
+        locale={undefined}
         title={appInfo?.displayName ?? 'Poppy'}
         logo={appReadyInfo?.appInfo?.icon ?? <HomeFilled style={{ color: '#FFF', fontSize: '22px' }} />}
         location={{
           pathname,
         }}
-        menuItemRender={(item, dom) => (
-          <a
-            onClick={() => {
-              setPathname(item.path || '/welcome');
-              history.push(item.path!);
-            }}
-          >
-            {dom}
-          </a>
-        )}
+        menuItemRender={() => {
+          return <HomeMenuList />;
+        }}
         rightContentRender={() => <HeadMenuBar />}
         footerRender={false}
       >
-        <PageContainer content="hello">Hello</PageContainer>
+        <PageContainer content="hello">
+          <HomeMenuList />
+        </PageContainer>
       </ProLayout>
     </div>
   );

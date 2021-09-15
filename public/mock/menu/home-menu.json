@@ -1,43 +1,66 @@
-{
-  "node": {
-    "appLevel": 0,
-    "parent": null,
-    "linkUrl": null,
-    "icon": null,
-    "hasPermission": true,
-    "i18nLabelKey": null,
-    "desc": null,
-    "status": "normal",
-    "resourceCode": "Setting",
-    "appNo": "6841372038532169728",
-    "type": "menu",
-    "position": "home",
-    "priority": 0,
-    "label": "Setting",
-    "createAt": "2021-09-08T14:10:00.600Z",
-    "updateAt": "2021-09-08T14:10:00.600Z"
+[
+  {
+    "node": {
+      "appLevel": 0,
+      "parent": null,
+      "linkUrl": null,
+      "icon": "TaobaoCircleFilled",
+      "hasPermission": true,
+      "i18nLabelKey": null,
+      "desc": null,
+      "status": "normal",
+      "resourceCode": "HomeA",
+      "appNo": "6841372038532169728",
+      "type": "menu",
+      "position": "home",
+      "priority": 0,
+      "label": "HomeA",
+      "createAt": "2021-09-08T14:10:00.600Z",
+      "updateAt": "2021-09-15T15:44:01.126Z"
+    },
+    "children": [
+      {
+        "node": {
+          "appLevel": 0,
+          "parent": "HomeA",
+          "linkUrl": null,
+          "icon": "TaobaoCircleFilled",
+          "hasPermission": true,
+          "i18nLabelKey": null,
+          "desc": null,
+          "status": "normal",
+          "resourceCode": "HomeA-1",
+          "appNo": "6841372038532169728",
+          "type": "menu",
+          "position": "home",
+          "priority": 0,
+          "label": "HomeA-1",
+          "createAt": "2021-09-08T14:10:00.610Z",
+          "updateAt": "2021-09-15T15:44:01.285Z"
+        },
+        "children": null
+      }
+    ]
   },
-  "children": [
-    {
-      "node": {
-        "appLevel": 0,
-        "parent": "Setting",
-        "linkUrl": null,
-        "icon": null,
-        "hasPermission": true,
-        "i18nLabelKey": null,
-        "desc": null,
-        "status": "normal",
-        "resourceCode": "Setting-1",
-        "appNo": "6841372038532169728",
-        "type": "menu",
-        "position": "home",
-        "priority": 0,
-        "label": "Setting-1",
-        "createAt": "2021-09-08T14:10:00.610Z",
-        "updateAt": "2021-09-08T14:10:00.610Z"
-      },
-      "children": null
-    }
-  ]
-}
+  {
+    "node": {
+      "appLevel": 0,
+      "parent": null,
+      "linkUrl": null,
+      "icon": null,
+      "hasPermission": true,
+      "i18nLabelKey": null,
+      "desc": "",
+      "status": "normal",
+      "resourceCode": "HomeB",
+      "appNo": "6841372038532169728",
+      "type": "menu",
+      "position": "home",
+      "priority": 0,
+      "label": "HomeB",
+      "createAt": "2021-09-09T03:10:00.600Z",
+      "updateAt": "2021-09-15T15:44:01.355Z"
+    },
+    "children": null
+  }
+]
