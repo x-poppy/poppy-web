@@ -6,6 +6,7 @@ import { getAppConfig } from 'src/utils/appConfig';
 import { getAxiosInstance } from 'src/utils/initAxios';
 import { initApp } from './initApp';
 import { initI18n } from './initI18n';
+import { initCSSVariables } from './initCSSVariables';
 
 let appReadyInfo: AppReadyInfo | null = null;
 
@@ -55,14 +56,27 @@ async function loadAppReadyInfo(): Promise<AppReadyInfo> {
 }
 
 export function useAppReadyInfo(): AppReadyInfoState {
-  const [appReadyInfoState, setAppReadyInfoState] = useState<AppReadyInfoState>({
-    loading: true,
-    error: null,
-    appReadyInfo: null,
-  });
+  const [appReadyInfoState, setAppReadyInfoState] = useState<AppReadyInfoState>(
+    appReadyInfo
+      ? {
+          loading: false,
+          error: null,
+          appReadyInfo,
+        }
+      : {
+          loading: true,
+          error: null,
+          appReadyInfo: null,
+        },
+  );
 
   useEffect(() => {
+    if (appReadyInfo) return;
+
     if (!appReadyInfoState.loading) return;
+    if (appReadyInfoState.error) return;
+    if (appReadyInfoState.appReadyInfo) return;
+
     (async () => {
       try {
         await initApp();
@@ -72,12 +86,12 @@ export function useAppReadyInfo(): AppReadyInfoState {
           error: null,
           appReadyInfo,
         });
+        initCSSVariables(appReadyInfo.themeInfo);
       } catch (err) {
         if (!err) {
           // eslint-disable-next-line no-ex-assign
           err = new Error('UnknownError');
         }
-
         setAppReadyInfoState({
           loading: false,
           error: err,
