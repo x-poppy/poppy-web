@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+/* global css variables */
+:global(:root) {
+  --home-page-bg: red;
+}
+
 .host {
   height: 100%;
 }

@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
-import { Avatar } from 'antd';
+import { useHistory } from 'react-router-dom';
 import { HomeFilled } from '@ant-design/icons';
 import ProLayout, { PageContainer } from '@ant-design/pro-layout';
 import { HeadMenuBar } from 'src/widgets/HeadMenuBar/HeadMenuBar';
-import styles from './Home.module.css';
 import { useAppReadyInfo } from 'src/utils/appReadyInfo';
-import { AppTitleLogo } from 'src/widgets/AppTitleLogo/AppTitleLogo';
+
+import styles from './Home.module.css';
 
 export function Home(): JSX.Element {
   const [pathname, setPathname] = useState('/welcome');
@@ -34,6 +33,7 @@ export function Home(): JSX.Element {
           </a>
         )}
         rightContentRender={() => <HeadMenuBar />}
+        footerRender={false}
       >
         <PageContainer content="hello">Hello</PageContainer>
       </ProLayout>

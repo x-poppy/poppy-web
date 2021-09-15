@@ -2,12 +2,10 @@ import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { Login } from 'src/pages/Login/Login';
 import { Home } from 'src/pages/Home/Home';
-import { useAppReadyInfo } from '../../utils/appReadyInfo';
-import { AppEmptyState } from '../../components/AppEmptyState/AppEmptyState';
-
+import { useAppReadyInfo } from 'src/utils/appReadyInfo';
+import { AppEmptyState } from 'src/components/AppEmptyState/AppEmptyState';
+import { AppLoading } from 'src/components/AppLoading/AppLoading';
 import styles from './App.module.css';
-import { AppLoading } from '../../components/AppLoading/AppLoading';
-
 interface AppProps {
   isWrapper?: boolean;
   children?: React.ReactNode;
@@ -34,9 +32,9 @@ export const App: React.FC<AppProps> = (props: AppProps) => {
     <div className={styles.host}>
       <HashRouter>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/" component={Home} />
-          {/*<Redirect to="/" exact/>*/}
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="*" component={Login} />
         </Switch>
       </HashRouter>
     </div>
